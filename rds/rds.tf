@@ -11,6 +11,7 @@ resource "aws_db_instance" "base_rds" {
     skip_final_snapshot = true
 }
 
+
 resource "aws_db_instance" "base_replica" {
     replicate_source_db        = aws_db_instance.base_rds.identifier
     auto_minor_version_upgrade = true
